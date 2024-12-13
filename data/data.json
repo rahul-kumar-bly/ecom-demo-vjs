@@ -1,0 +1,58 @@
+{
+"gameData": [
+  {
+    "id": "413150",
+    "name": "Stardew Valley",
+    "price": "₹479",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1733722502"
+  },
+  {
+    "id": "1657630",
+    "name": "Slime Rancher 2",
+    "price": "₹792",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1657630/header.jpg?t=1734108998"
+  },
+  {
+    "id": "271590",
+    "name": "Grand Theft Auto V",
+    "price": "₹1978",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1734084035"
+  },
+  {
+    "id": "553850",
+    "name": "HELLDIVERS™ 2",
+    "price": "₹1999",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg?t=1734106001"
+  },
+  {
+    "id": "3087650",
+    "name": "A Shelter Full of Cats",
+    "price": "₹225",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3087650/header.jpg?t=1734042634"
+  },
+  {
+    "id": "1174180",
+    "name": "Red Dead Redemption 2",
+    "price": "₹1559 ",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1732026284"
+  },
+  {
+    "id": "775500",
+    "name": "SCARLET NEXUS",
+    "price": "₹319",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/775500/header.jpg?t=1732320758"
+  },
+  {
+    "id": "740130",
+    "name": "Tales of Arise",
+    "price": "₹887",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/740130/header.jpg?t=1732856593"
+  },
+  {
+    "id": "2050650",
+    "name": "Resident Evil 4",
+    "price": "₹1309",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1733875562"
+  }
+]
+}
