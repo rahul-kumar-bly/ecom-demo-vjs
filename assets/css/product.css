@@ -1,10 +1,6 @@
 .container{
     margin:30px;
-    background-image:
-            linear-gradient(rgba(44, 45, 59, 0.95), rgba(45, 46, 52, 0.95)), /* Semi-transparent overlay */
-            url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.jpg'); /* Background image */
-    background-size: cover;
-    background-position: center;
+    font-family: "Noto Serif", serif;
 }
 
 .heading-container{
@@ -17,32 +13,53 @@
 
 .inner-container{
     display:flex;
-    gap: 25px;
-    margin: 15px;
+    /*gap: 25px;*/
+    margin: 15px 0px;
+    align-items: center;
+    justify-content: space-around;
 }
+
+@media (max-width:1000px){
+    .inner-container{
+        flex-direction: column;
+    }
+}
+
 
 .left-container{
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    /*gap: 15px;*/
+}
+
+
+.screenshot-container img{
+    align-items: center;
+    width:800px;
 }
 
 .right-container{
-    /*margin: 0px 10px;*/
+    margin-top: 0px;
 }
 
 .mini-img-container img{
     margin: 5px 2px;
+    width: 350px;
 }
 
 .details{
-    margin: 5px 2px;
+    margin: 3px 2px;
 }
 
 .short-desc{
-    font-size: 20px;
+    font-size: 15px;
+    width: 350px;
+    text-align: justify;
 }
 
 .pub-dev{
-    margin:5px 0px;
+    margin:2px 0px;
     font-size:large;
     color: #898989;
 }
@@ -65,7 +82,7 @@
 .product-cart{
     text-align: center;
     background-color:#3d724f;
-    padding:10px;
+    padding:8px;
     cursor:pointer;
 }
 
@@ -76,11 +93,41 @@
 .product-wishlist{
     text-align: center;
     background-color:#494a4f ;
-    padding:10px;
+    padding:8px;
     cursor:pointer;
 }
 
 .product-wishlist:hover{
     background-color:#e66051;
+}
+
+/* Bottom Container */
+.middle-container{
+    display: flex;
+    margin: 0px 20px;
+    justify-content: space-between;
+}
+.left-middle-container{
+    display: flex;
+}
+/*experiemntal*/
+
+.hidden {
+    display: none; /* Hide the hidden content initially */
+}
+#content-container {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+#toggleButton {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #e66051;
+    font-size: 18px;
+    font-style: italic;
+}
+#toggleButton:hover {
+    text-decoration: underline;
 }
 
