@@ -29,12 +29,12 @@ let generateShop = async () => {
                 <div class="item-price">${price}</div>
             </div>
             <div class="prod-action">
-                <a href="cart.html">
+                <a onclick="addToCart(${id})">
                     <div class="prod-cart">
                         <i class="bi bi-cart-fill"></i> ADD TO CART
                     </div>
                 </a>
-                <a href="wishlist.html">
+                <a onclick="addToWishlist(${id})">
                     <div class="prod-wishlist">
                         <i class="bi bi-heart"></i>
                     </div>
@@ -48,3 +48,36 @@ let generateShop = async () => {
 
 generateShop();
 
+let localCart = JSON.parse(localStorage.getItem('cartData')) || [];
+
+let addToCart = async (prodcutId) => {
+    let search = localCart.find(item => item.id === prodcutId);
+    if (search === undefined) {
+        localCart.push({id:prodcutId});
+        localStorage.setItem('cartData', JSON.stringify(localCart));
+        calculate(localCart, 'cartAmount');
+    } else {return;}
+}
+
+let localWishlist = JSON.parse(localStorage.getItem('wishlistData')) || [];
+
+let addToWishlist = async (prodcutId) => {
+    let search = localWishlist.find(item => item.id === prodcutId);
+    if (search === undefined) {
+        localWishlist.push({id:prodcutId});
+        localStorage.setItem('wishlistData', JSON.stringify(localWishlist));
+        calculate(localWishlist, 'wishlistAmount');
+    }
+    else {return;}
+}
+
+// selectionCountId - cartAmount
+
+let calculate = async (localStorageDatabase, selectionCountId) => {
+    let selectionCountElement = document.getElementById(selectionCountId);
+    console.log(localStorageDatabase.length);
+    selectionCountElement.innerHTML = localStorageDatabase.length;
+}
+
+calculate(localCart, 'cartCount');
+calculate(localWishlist, 'wishlistCount');
