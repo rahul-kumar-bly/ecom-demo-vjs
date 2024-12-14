@@ -1,0 +1,80 @@
+{
+  "gameData": [
+    {
+      "id": "413150",
+      "name": "Stardew Valley",
+      "price": "₹479",
+      "icon": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/413150/35d1377200084a4034238c05b0c8930451e2fb40.jpg",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1733722502",
+      "screenshots": ["https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_9ac899fe2cda15d48b0549bba77ef8c4a090a71c.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_4fa0866709ede3753fdf2745349b528d5e8c4054.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_d836f0a5b0447fb6a2bdb0a6ac5f954949d3c41e.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_10628b4a811c0a925a1433d4323f78c7017dbbe4.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_6422d297347258086b389e3d5d9c0e0c698312e4.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_a3ddf22cda3bd722df77dbdd58dbec393906b654.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_30aeedc47e731232ade368831a598d6545346f70.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_64d942a86eb527ac817f30cc04406796860a6fc1.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_37f15ea893ec1fa7c9e73106f512e98161bac61b.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_5e327e4cfc49d8137f8014e728eae3c0e6be2dca.jpg",
+      "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_980472fb4f4860639155880938b6ec292a0648c4.jpg"],
+      "trailer": "https://www.youtube.com/watch?v=ot7uXNQskhs&t=2s",
+      "shortDesc": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?\n\n",
+      "steamDeck": "Enabled",
+      "primaryGenre": "Indie",
+      "genre": ["Indie", "RPG", "Simulation"],
+      "supportedOs": ["Windows", "macOS", "Linux"],
+      "releaseDate": "26 Feb, 2016",
+      "dev": "ConcernedApe",
+      "pub": "ConcernedApe"
+    },
+    {
+      "id": "1657630",
+      "name": "Slime Rancher 2",
+      "price": "₹792",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1657630/header.jpg?t=1734108998"
+    },
+    {
+      "id": "271590",
+      "name": "Grand Theft Auto V",
+      "price": "₹1978",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1734084035"
+    },
+    {
+      "id": "553850",
+      "name": "HELLDIVERS™ 2",
+      "price": "₹1999",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg?t=1734106001"
+    },
+    {
+      "id": "3087650",
+      "name": "A Shelter Full of Cats",
+      "price": "₹225",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3087650/header.jpg?t=1734042634"
+    },
+    {
+      "id": "1174180",
+      "name": "Red Dead Redemption 2",
+      "price": "₹1559 ",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1732026284"
+    },
+    {
+      "id": "775500",
+      "name": "SCARLET NEXUS",
+      "price": "₹319",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/775500/header.jpg?t=1732320758"
+    },
+    {
+      "id": "740130",
+      "name": "Tales of Arise",
+      "price": "₹887",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/740130/header.jpg?t=1732856593"
+    },
+    {
+      "id": "2050650",
+      "name": "Resident Evil 4",
+      "price": "₹1309",
+      "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1733875562"
+    }
+  ]
+}

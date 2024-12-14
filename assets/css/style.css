@@ -6,6 +6,7 @@
 
 body{
     background: #27282d;
+    color:#E8E5E0;
 }
 
 a{
@@ -124,6 +125,7 @@ a{
     background: #e3e3d0;
     color:#161618
 }
+
 
 @media (max-width: 1000px){
     .shop{

@@ -1,0 +1,86 @@
+.container{
+    margin:30px;
+    background-image:
+            linear-gradient(rgba(44, 45, 59, 0.95), rgba(45, 46, 52, 0.95)), /* Semi-transparent overlay */
+            url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+}
+
+.heading-container{
+    margin: 15px 5px;
+    display: flex;
+    gap: 15px;
+    font-size: large;
+    align-items: center;
+}
+
+.inner-container{
+    display:flex;
+    gap: 25px;
+    margin: 15px;
+}
+
+.left-container{
+    align-items: center;
+}
+
+.right-container{
+    /*margin: 0px 10px;*/
+}
+
+.mini-img-container img{
+    margin: 5px 2px;
+}
+
+.details{
+    margin: 5px 2px;
+}
+
+.short-desc{
+    font-size: 20px;
+}
+
+.pub-dev{
+    margin:5px 0px;
+    font-size:large;
+    color: #898989;
+}
+
+.pub-dev-title{
+    text-decoration: underline;
+    color: #e66051;
+}
+
+
+.cart-wishlist-container{
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    align-items: center;
+    color: #161618;
+
+}
+
+.product-cart{
+    text-align: center;
+    background-color:#3d724f;
+    padding:10px;
+    cursor:pointer;
+}
+
+.product-cart:hover{
+    background-color:#10d422;
+}
+
+.product-wishlist{
+    text-align: center;
+    background-color:#494a4f ;
+    padding:10px;
+    cursor:pointer;
+}
+
+.product-wishlist:hover{
+    background-color:#e66051;
+}
+

@@ -18,7 +18,7 @@ let loadData = async (data) => {
 }
 
 let loadProduct = async (productId) => {
-const data = await loadData('../../data/data.json');
+    const data = await loadData('../../data/product.json');
     const product = data.gameData.find(item => item.id === productID);
     console.log(product);
     await generateProductListing(product);
@@ -29,11 +29,6 @@ loadProduct(productID);
 let generateProductListing = async (product) => {
     console.log(product.name);
     const productHtml = document.getElementById('product');
-    productHtml.innerHTML = `
-    <img src="${product.img}" />
-    <p>${product.name}</p>
-    <p>${product.price}</p>
-    `
 }
 
 

@@ -31,7 +31,7 @@ let generateShop = async () => {
             <div class="prod-action">
                 <a onclick="addToCart(${id})" id="addToCart">
                     <div class="prod-cart">
-                        <i class="bi bi-cart-fill"></i>ADD TO CART
+                        <i class="bi bi-cart-fill"></i> ADD TO CART
                     </div>
                 </a>
                 <a onclick="addToWishlist(${id})" id="addToWishlist">
