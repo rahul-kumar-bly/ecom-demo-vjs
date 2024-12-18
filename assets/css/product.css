@@ -1,6 +1,35 @@
-.container{
-    margin:30px;
-    font-family: "Noto Serif", serif;
+.product{
+    display: flex;
+    flex-direction: column;
+}
+
+.top-container-bg{
+    align-self: center;
+    padding: 20px;
+}
+
+.top-container {
+    display: flex;
+    justify-content:space-between;
+    gap: 50px;
+}
+
+/* top left container started */
+
+.top-left-container {
+    width:700px;
+    height:438px;
+    flex:1;
+}
+
+.top-left-container img{
+    width:100%;
+    height:100%;
+}
+
+.top-left-container iframe{
+    width:700px;
+    height:393px;
 }
 
 .heading-container{
@@ -8,39 +37,25 @@
     display: flex;
     gap: 15px;
     font-size: large;
+    font-family: "Inter", sans-serif;
     align-items: center;
 }
 
-.inner-container{
-    display:flex;
-    /*gap: 25px;*/
-    margin: 15px 0px;
-    align-items: center;
-    justify-content: space-around;
+/* top right container started */
+
+.top-right-container {
+    flex:1;
+    margin-top:65px;
 }
 
 @media (max-width:1000px){
-    .inner-container{
+    .top-container{
         flex-direction: column;
     }
-}
-
-
-.left-container{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    /*gap: 15px;*/
-}
-
-
-.screenshot-container img{
-    align-items: center;
-    width:800px;
-}
-
-.right-container{
-    margin-top: 0px;
+    .top-right-container{
+        margin-top:5px;
+        align-self:center
+    }
 }
 
 .mini-img-container img{
@@ -68,7 +83,6 @@
     text-decoration: underline;
     color: #e66051;
 }
-
 
 .cart-wishlist-container{
     display: flex;
@@ -101,33 +115,19 @@
     background-color:#e66051;
 }
 
-/* Bottom Container */
+/* middle container started */
+
 .middle-container{
-    display: flex;
-    margin: 0px 20px;
-    justify-content: space-between;
-}
-.left-middle-container{
-    display: flex;
-}
-/*experiemntal*/
-
-.hidden {
-    display: none; /* Hide the hidden content initially */
-}
-#content-container {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
-#toggleButton {
-    margin-top: 10px;
-    cursor: pointer;
-    color: #e66051;
-    font-size: 18px;
-    font-style: italic;
-}
-#toggleButton:hover {
-    text-decoration: underline;
+    display:block;
+    margin: 50px 100px;
+    font-size:large;
+    font-family: "Noto Serif", serif;
 }
 
+.middle-container h2{
+    font-size:xxx-large;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Inter", sans-serif
+}
