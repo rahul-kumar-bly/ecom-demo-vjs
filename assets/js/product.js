@@ -65,5 +65,3 @@ let generateProductListing = async (product) => {
     const longDescContainer = document.getElementById('longDesc');
     productHtml.querySelector('#longDesc').innerText = product.longDesc.trim();
 }
-
-

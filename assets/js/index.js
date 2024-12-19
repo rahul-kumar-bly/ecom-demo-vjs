@@ -52,6 +52,7 @@ let localCart = JSON.parse(localStorage.getItem('cartData')) || [];
 let localWishlist = JSON.parse(localStorage.getItem('wishlistData')) || [];
 
 let addToCart = (prodcutId) => {
+    prodcutId = String(prodcutId);
     let search = localCart.find(item => item.id === prodcutId);
     if (search === undefined) {
         localCart.push({id:prodcutId});
@@ -61,6 +62,7 @@ let addToCart = (prodcutId) => {
 }
 
 let addToWishlist = (prodcutId) => {
+    prodcutId = String(prodcutId);
     let search = localWishlist.find(item => item.id === prodcutId);
     if (search === undefined) {
         localWishlist.push({id:prodcutId});
