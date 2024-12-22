@@ -1,6 +1,3 @@
-let localCart = JSON.parse(localStorage.getItem('cartData')) || [];
-let localWishlist = JSON.parse(localStorage.getItem('wishlistData')) || [];
-
 const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("id");
 
@@ -29,7 +26,7 @@ let generateProductListing = async (product) => {
     // product section background
     let container = document.getElementById('topContainerBg');
     container.style.backgroundImage = `
-    linear-gradient(rgba(44, 45, 59, 0.95), rgba(45, 46, 52, 0.95)),
+    linear-gradient(rgba(44, 45, 59, 0.90), rgba(45, 46, 52, 0.90)),
     url(${product.screenshots[1]})
 `;
     container.style.backgroundSize = 'cover';
@@ -65,3 +62,130 @@ let generateProductListing = async (product) => {
     const longDescContainer = document.getElementById('longDesc');
     productHtml.querySelector('#longDesc').innerText = product.longDesc.trim();
 }
+
+let toggleAddToCart = (productId) => {
+    let search = localCart.find(item => item.id === productId);
+    console.log('search is', search);
+    let addToCartText = document.getElementById('addToCartText');
+    let clickAddToCart = document.getElementById('addToCart');
+    if (search === undefined) {
+        addToCartText.innerHTML =  'add to cart';
+        clickAddToCart.addEventListener('click', (event)=> {
+            event.preventDefault();
+            console.log('clicked', event);
+            addToCart(productId);
+            console.log('item added to cart');
+        })
+    }
+    else {
+        addToCartText.innerHTML =  'Remove from cart';
+        clickAddToCart.addEventListener('click', (event)=> {
+            event.preventDefault();
+            console.log('clicked', event);
+            removeFromCart(productId);
+            console.log('item removed from cart');
+        })
+    }
+
+}
+
+
+
+let addToCart = async (productId) => {
+    let search = localCart.find(item => item.id === productId);
+    if (search === undefined) {
+        localCart.push({id:productId});
+    }
+    else if (search) {
+        console.log('item already in cart');
+        return;
+    }
+    localStorage.setItem('cartData', JSON.stringify(localCart));
+    calculate(localCart, 'cartCount');
+    toggleAddToCart(productId);
+}
+
+let removeFromCart = (productId) => {
+    let search = localCart.find(item => item.id === productId);
+    if (search !== undefined) {
+        localCart = localCart.filter(item => item.id !== productId);
+    }
+    else {
+        return;
+    }
+    localStorage.setItem('cartData', JSON.stringify(localCart));
+    calculate(localCart, 'cartCount');
+    toggleAddToCart(productId);
+}
+
+let toggleAddToWishlist = (productId) => {
+    let search = localWishlist.find(item => item.id === productId);
+    console.log('search is', search);
+    let addToCartText = document.getElementById('addToWishlistText');
+    let clickAddToCart = document.getElementById('addToWishlist');
+    if (search === undefined) {
+        addToCartText.innerHTML =  'add to wishlist';
+        clickAddToCart.addEventListener('click', (event)=> {
+            event.preventDefault();
+            console.log('clicked', event);
+            addToWishlist(productId);
+            console.log('item added to wishlist');
+        })
+    }
+    else {
+        addToCartText.innerHTML =  'Remove from wishlist';
+        clickAddToCart.addEventListener('click', (event)=> {
+            event.preventDefault();
+            console.log('clicked', event);
+            removeFromWishlist(productId);
+            console.log('item removed from wishlist');
+        })
+    }
+
+}
+
+
+let addToWishlist = async (productId) => {
+    let search = localWishlist.find(item => item.id === productId);
+    if (search === undefined) {
+        localWishlist.push({id:productId});
+    }
+    else if (search) {
+        console.log('item already in cart');
+        return;
+    }
+    localStorage.setItem('wishlistData', JSON.stringify(localCart));
+    calculate(localWishlist, 'wishlistCount');
+    toggleAddToWishlist(productId);
+}
+
+let removeFromWishlist = (productId) => {
+    let search = localWishlist.find(item => item.id === productId);
+    if (search !== undefined) {
+        localWishlist = localWishlist.filter(item => item.id !== productId);
+    }
+    else {
+        return;
+    }
+    localStorage.setItem('wishlistData', JSON.stringify(localCart));
+    calculate(localWishlist, 'wishlistCount');
+    toggleAddToWishlist(productId);
+}
+
+
+let calculate = (basketType, selector) => {
+    const lengthOfBasket = basketType.length;
+    const counter = document.getElementById(selector);
+    if (lengthOfBasket > 0){
+        counter.innerText = lengthOfBasket;
+        counter.style.visibility = 'visible';
+    }
+    if (lengthOfBasket === 0){
+        counter.style.visibility = 'hidden';
+    }
+}
+
+calculate(localCart, 'cartCount');
+calculate(localWishlist, 'wishlistCount');
+toggleAddToCart(productID);
+toggleAddToWishlist(productID);

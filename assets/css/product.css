@@ -5,7 +5,7 @@
 
 .top-container-bg{
     align-self: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .top-container {
@@ -98,6 +98,7 @@
     background-color:#3d724f;
     padding:8px;
     cursor:pointer;
+    font-size:small;
 }
 
 .product-cart:hover{
@@ -109,10 +110,19 @@
     background-color:#494a4f ;
     padding:8px;
     cursor:pointer;
+    font-size:small;
 }
 
 .product-wishlist:hover{
     background-color:#e66051;
+}
+
+.add-to-cart-text{
+    text-transform: uppercase;
+}
+
+.add-to-wishlist-text{
+    text-transform: uppercase;
 }
 
 /* middle container started */
