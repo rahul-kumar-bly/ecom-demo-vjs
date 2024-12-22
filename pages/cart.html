@@ -19,7 +19,7 @@
         <a href="wishlist.html"><div class="wishlist"><i class="bi bi-bag-heart-fill"></i>
             <div id="wishlistCount" class="wishlistCount"></div>
         </div></a>
-        <a href="./pages/cart.html">
+        <a href="cart.html">
             <div class="cart">
                 <i class="bi bi-cart2"></i>
                 <div id="cartCount" class="cartCount"></div>
@@ -28,11 +28,54 @@
     </div>
 </div>
 
-
-<div class="products" id="products">
-
+<div class="no-item-found">
+    <h2>Cart is empty</h2>
+    <p>Add some item before preciding... <a href="../index.html">Browse Games</a></p>
 </div>
 
+<div class="main-container">
+    <div class="products" id="products">
+    </div> <!-- products ends -->
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Cart Summary</h2>
+        </div>
+            <div class="price-discount-section">
+                <span class="full-price">
+                    Full Price - $150.00
+                </span>
+                <span class="discount-total">
+                    Your Discount - $20
+                </span>
+                <hr />
+                <span class="you-save">You Save - $30</span>
+                <hr />
+                <span class="total-cart-amount">
+                    Total Amount - $130.00
+                </span>
+                <hr />
+            </div>
+
+            <div class="payment-button-section">
+                <button class="payment-button">
+                    PROCEED TO PAYMENT
+                </button>
+            </div>
+            <div class="buying-discalimer">
+                By purchasing a digital product, you are granted a license to use the product on the specified DRM platform.
+                For more information, please see our terms and conditions.
+                By clicking Place Order, you accept our refund policy.
+            </div>
+        <br />
+        <img src="../assets/images/payment-method.svg" alt="" />
+        
+    </div> <!-- sidebar ends -->
+
+</div> <!-- main container ends -->
+
 </body>
+<script src="../assets/js/basket.js"></script>
+<script src="../assets/js/methods.js"></script>
 <script src="../assets/js/cart.js"></script>
 </html>
