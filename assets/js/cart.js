@@ -1,5 +1,3 @@
-let cartItems = JSON.parse(localStorage.getItem('cartData'));
-
 const fetchCartData = async (data) => {
     try {
     const response = await fetch(data);
@@ -13,13 +11,14 @@ const fetchCartData = async (data) => {
 }
 
 let generateCartItems = async () => {
+    let cartItems = calculateCartItems();
+    console.log('this function hasbeen called!')
     const data = await fetchCartData('../../data/data.json');
     if (cartItems.length > 0){
         const shoppingCart = document.getElementById('products');
         shoppingCart.innerHTML = cartItems.map((item) => {
             const {id} = item;
             let search = data.gameData.find((dataItem) => dataItem.id === id) || [];
-            console.log(search)
             return `
                 <div class="product" id="product">
                     <a href="./product.html?id=${search.id}">
@@ -39,7 +38,7 @@ let generateCartItems = async () => {
                         <button>Move to wishlist</button>
                     </div>                    
                     <div class="remove-from-cart" id="removeFromCart">
-                        <button>X</button>
+                        <button onclick="removeFromCart(${search.id})"><i class="bi bi-trash"></i></button>
                     </div>
                     </div>
                     </div>
@@ -50,3 +49,22 @@ let generateCartItems = async () => {
 }
 
 generateCartItems();
+
+const removeFromCart = (id) => {
+    let cartItems = calculateCartItems();
+    console.log('id is ', id.toString());
+    cartItems = cartItems.filter((item) => item.id !== id.toString());
+    localStorage.setItem('cartData', JSON.stringify(cartItems));
+    generateCartItems();
+    calculate(cartItems, 'cartCount');
+}
+
+let calculate = (localStorageDatabase, selectionCountId) => {
+    let selectionCountElement = document.getElementById(selectionCountId);
+    console.log(localStorageDatabase.length);
+    selectionCountElement.innerHTML = localStorageDatabase.length;
+}
+
+
+calculate(calculateCartItems(), 'cartCount');
+
