@@ -53,6 +53,79 @@
     "name": "Resident Evil 4",
     "price": "₹1309",
     "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1733875562"
+  },
+  {
+    "id": "1091500",
+    "name": "Cyberpunk 2077",
+    "price": "₹2999",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg?t=1735458022"
+  },
+  {
+    "id": "752590",
+    "name": "A Plague Tale: Innocence",
+    "price": "₹379",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/752590/header.jpg?t=1732813444"
+  },
+  {
+    "id": "2252570",
+    "name": "Football Manager 2024",
+    "price": "₹1359",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2252570/header.jpg?t=1735426319"
+  },
+  {
+    "id": "1030840",
+    "name": "Mafia: Definitive Edition",
+    "price": "₹2199",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1030840/header.jpg?t=1735862001"
+  },
+  {
+    "id": "200510",
+    "name": "XCOM: Enemy Unknown",
+    "price": "₹1499",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/200510/header.jpg?t=1734927739"
+  },
+  {
+    "id": "8850",
+    "name": "BioShock 2",
+    "price": "₹149",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/8850/header.jpg?t=1732827834"
+  },
+  {
+    "id": "1897650",
+    "name": "Dream Tactics",
+    "price": "₹566",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1897650/header.jpg?t=1735861753"
+  },
+  {
+    "id": "2313720",
+    "name": "Noun Town Language Learning",
+    "price": "₹660",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2313720/header.jpg?t=1735956796"
+  },
+  {
+    "id": "312520",
+    "name": "Rain World",
+    "price": "₹976",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/312520/header.jpg?t=1734796322"
+  },
+  {
+    "id": "8870",
+    "name": "BioShock Infinite",
+    "price": "₹349",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/8870/header.jpg?t=1735862229"
+  },
+  {
+    "id": "3371240",
+    "name": "Beyond Citadel",
+    "price": "₹621",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3371240/header.jpg?t=1736062790"
+  },
+  {
+    "id": "1378290",
+    "name": "The Citadel",
+    "price": "₹459",
+    "img": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1378290/header.jpg?t=1735977967"
   }
+
 ]
 }

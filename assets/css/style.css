@@ -43,6 +43,7 @@ a{
     border-radius: 4px;
 }
 
+
 .cartCount, .wishlistCount{
     font-size: 16px;
     position: absolute;
@@ -53,6 +54,20 @@ a{
     padding: 1px 5px;
     border-radius: 3px;
 }
+/*=============================*/
+/* Main container */
+/*=============================*/
+
+/*.main-container{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 25px;*/
+/*    align-items: center;*/
+/*}*/
+
+
+
+
 
 /*=============================*/
 /* Shop CSS started from here */
@@ -68,15 +83,20 @@ a{
 .prod{
     background: #161618;
     border-radius: 4px;
+    overflow: hidden;
 }
 
 .prod-image img{
     width: 100%;
     border-radius: 2px 2px 0 0;
+    object-fit: cover;
 }
 
 .prod-image img:hover{
     opacity: 0.8;
+    scale: 105%;
+    transition: 300ms;
+    object-fit: cover;
 }
 
 .prod-details{
@@ -104,6 +124,7 @@ a{
     padding: 5px 5px;
     color: #E8E5E0;
     text-align: center;
+    outline: none;
 }
 
 .prod-cart{

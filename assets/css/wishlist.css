@@ -1,7 +1,17 @@
 .main-container{
-    display: grid;
-    grid-template-columns:70% 20%;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+}
+.container h1{
+    font-family: "Inter", sans-serif;
 }
 
 .products{
@@ -9,7 +19,7 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    /*margin: auto;*/
+    margin: auto;
     color:#E8E5E0;
 }
 
@@ -49,12 +59,12 @@
     width:50px;
     font-size:large;
 }
-.cart-operations{
+.wishlist-operations{
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.cart-operations button{
+.wishlist-operations button{
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -63,48 +73,16 @@
     font-family: "Inter", sans-serif;
 }
 
-.move-to-wishlist button{
+.move-to-cart button{
     background: #3d724f;
-    width:120px;
+    width:100px;
     text-align: center;
 }
 
-.remove-from-cart button{
+.remove-from-wishlist button{
     background-color: #e66051;
-    width:130px;
+    width:150px;
     text-align: center;
-}
-
-/*sidebar section css*/
-.sidebar{
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    background: #161618;
-    padding: 10px 10px;
-}
-.sidebar-header{
-    padding: 10px 10px;
-    font-family: "Inter", sans-serif;
-    background: #494a4f;
-}
-
-.price-discount-section{
-    padding: 10px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: large;
-    font-family: "Noto Serif", serif;
-    margin-top:10px;
-}
-.payment-button-section{
-    padding: 0px 10px;
-}
-.payment-button{
-    padding: 10px 10px;
-    background-color: #00e205;
-    font-weight: bold;
 }
 
 .no-item-found{

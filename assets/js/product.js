@@ -1,18 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("id");
 
-let loadData = async (data) => {
-    try {
-        const response = await fetch(data);
-        if (!response.ok) {
-            console.error(response.status);
-        }
-        return await response.json();
-    } catch (err) {
-        console.error(`Error loading JSON ${err.message}`);
-    }
-}
-
 let loadProduct = async (productId) => {
     const data = await loadData('../../data/product.json');
     const product = data.gameData.find(item => item.id === productID);
@@ -40,8 +28,8 @@ let generateProductListing = async (product) => {
     productHtml.querySelector('#releaseDate').innerText = product.releaseDate;
 
     //  screenshot
-    const trailerDiv = document.getElementById('swiperSlide0');
-    trailerDiv.src = product.trailer;
+    // const trailerDiv = document.getElementById('swiperSlide0');
+    // trailerDiv.src = product.trailer;
     let swiperWrapper = document.querySelector('.swiper-wrapper');
     product.screenshots.forEach(screenshot => {
         let swiperSlide = document.createElement('div')
@@ -56,39 +44,75 @@ let generateProductListing = async (product) => {
     //     shortDesc
     productHtml.querySelector('#shortDesc').innerText = product.shortDesc;
     //     pub-dev
-    productHtml.querySelector('#pub .pub-dev-title').innerText = product.pub;
-    productHtml.querySelector('#dev .pub-dev-title').innerText = product.dev;
+    const pubInfo = productHtml.querySelector('#pub .pub-dev-title');
+    product.pub.map(item => {
+        const pubSpan = document.createElement('span');
+        pubSpan.innerText = item
+        pubInfo.appendChild(pubSpan);
+        pubSpan.onclick = () => {
+            const pubQuery = pubSpan.innerText.trim().split(" ").join("+");
+            window.location.href = `search.html?pubId=${pubQuery}`;
+        }
+    })
+
+    console.log(product.dev)
+    const devInfo = productHtml.querySelector('#dev .pub-dev-title');
+    product.dev.map(item => {
+        const devSpan = document.createElement('span');
+        devSpan.innerText = item
+        devInfo.appendChild(devSpan);
+        devSpan.onclick = () => {
+            const devQuery = devSpan.innerText.trim().split(" ").join("+");
+            window.location.href = `search.html?devId=${devQuery}`;
+        }
+    })
+    // devInfo.innerText = product.dev;
+
+    // fetch developer and display in a new page
+
     // long desc
     const longDescContainer = document.getElementById('longDesc');
     productHtml.querySelector('#longDesc').innerText = product.longDesc.trim();
-}
 
-let toggleAddToCart = (productId) => {
-    let search = localCart.find(item => item.id === productId);
-    console.log('search is', search);
-    let addToCartText = document.getElementById('addToCartText');
-    let clickAddToCart = document.getElementById('addToCart');
-    if (search === undefined) {
-        addToCartText.innerHTML =  'add to cart';
-        clickAddToCart.addEventListener('click', (event)=> {
-            event.preventDefault();
-            console.log('clicked', event);
-            addToCart(productId);
-            console.log('item added to cart');
-        })
-    }
-    else {
-        addToCartText.innerHTML =  'Remove from cart';
-        clickAddToCart.addEventListener('click', (event)=> {
-            event.preventDefault();
-            console.log('clicked', event);
-            removeFromCart(productId);
-            console.log('item removed from cart');
-        })
+//     setup addToCart button
+    const addToCartDiv = document.getElementById('addToCart');
+    addToCartDiv.addEventListener('click', () => {
+        addToCart(productID);
+        isInCartFunc(addToCartDiv, '#addToCartText');
+    });
+    const itemIsInCart = localCart.some(item => item.id === productID);
+    if (itemIsInCart){
+        isInCartFunc(addToCartDiv, '#addToCartText');
+        console.log('itemIsInCart');
     }
 
+    //     setup addToWishlist button
+    const addToWishlistDiv = document.getElementById('addToWishlist');
+    addToWishlistDiv.addEventListener('click', () => {
+        addToWishlist(productID);
+        isInWishlistFunc(addToWishlistDiv, '#addToWishlistText');
+    });
+    const itemIsInWishlist = localWishlist.some(item => item.id === productID);
+    if (itemIsInWishlist){
+        isInWishlistFunc(addToWishlistDiv, '#addToWishlistText');
+        console.log('itemIsInWishlist');
+    }
+
 }
 
+let isInCartFunc = (prodCartDiv, textSpan) => {
+    prodCartDiv.style.backgroundColor = '#5db585';
+    document.querySelector(textSpan).innerText = "ITEM IN CART";
+    prodCartDiv.style.pointerEvents = 'none';
+}
+
+let isInWishlistFunc = (prodWishlistDiv, textSpan) => {
+    prodWishlistDiv.style.backgroundColor = '#c2181e';
+    document.querySelector(textSpan).innerText = "ITEM IN WISHLIST";
+    document.querySelector(textSpan).style.color = "#e3e3d0"
+    prodWishlistDiv.style.pointerEvents = 'none';
+
+}
 
 
 let addToCart = async (productId) => {
@@ -102,7 +126,6 @@ let addToCart = async (productId) => {
     }
     localStorage.setItem('cartData', JSON.stringify(localCart));
     calculate(localCart, 'cartCount');
-    toggleAddToCart(productId);
 }
 
 let removeFromCart = (productId) => {
@@ -115,33 +138,6 @@ let removeFromCart = (productId) => {
     }
     localStorage.setItem('cartData', JSON.stringify(localCart));
     calculate(localCart, 'cartCount');
-    toggleAddToCart(productId);
-}
-
-let toggleAddToWishlist = (productId) => {
-    let search = localWishlist.find(item => item.id === productId);
-    console.log('search is', search);
-    let addToCartText = document.getElementById('addToWishlistText');
-    let clickAddToCart = document.getElementById('addToWishlist');
-    if (search === undefined) {
-        addToCartText.innerHTML =  'add to wishlist';
-        clickAddToCart.addEventListener('click', (event)=> {
-            event.preventDefault();
-            console.log('clicked', event);
-            addToWishlist(productId);
-            console.log('item added to wishlist');
-        })
-    }
-    else {
-        addToCartText.innerHTML =  'Remove from wishlist';
-        clickAddToCart.addEventListener('click', (event)=> {
-            event.preventDefault();
-            console.log('clicked', event);
-            removeFromWishlist(productId);
-            console.log('item removed from wishlist');
-        })
-    }
-
 }
 
 
@@ -154,9 +150,8 @@ let addToWishlist = async (productId) => {
         console.log('item already in cart');
         return;
     }
-    localStorage.setItem('wishlistData', JSON.stringify(localCart));
+    localStorage.setItem('wishlistData', JSON.stringify(localWishlist));
     calculate(localWishlist, 'wishlistCount');
-    toggleAddToWishlist(productId);
 }
 
 let removeFromWishlist = (productId) => {
@@ -167,9 +162,8 @@ let removeFromWishlist = (productId) => {
     else {
         return;
     }
-    localStorage.setItem('wishlistData', JSON.stringify(localCart));
+    localStorage.setItem('wishlistData', JSON.stringify(localWishlist));
     calculate(localWishlist, 'wishlistCount');
-    toggleAddToWishlist(productId);
 }
 
 
@@ -187,5 +181,3 @@ let calculate = (basketType, selector) => {
 
 calculate(localCart, 'cartCount');
 calculate(localWishlist, 'wishlistCount');
-toggleAddToCart(productID);
-toggleAddToWishlist(productID);

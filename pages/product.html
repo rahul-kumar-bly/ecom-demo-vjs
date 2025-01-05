@@ -45,7 +45,7 @@
         <!--            image slider-->
             <div class="swiper sample-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><iframe id="swiperSlide0" src="#" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation" allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>
+<!--                    <div class="swiper-slide"><iframe id="swiperSlide0" src="#" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation" allow="autoplay; encrypted-media; picture-in-picture"></iframe></div>-->
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -75,10 +75,10 @@
                 </div>
             </div>
             <div class="cart-wishlist-container">
-                <div class="product-cart" id="addToCart" onclick="toggleAddToCart(productID)">
+                <div class="product-cart" id="addToCart">
                     <i class="bi bi-cart-fill"></i> <span id="addToCartText" class="add-to-cart-text">ADD TO CART</span>
                 </div>
-                <div class="product-wishlist" id="addToWishlist" onclick="toggleAddToWishlist(productID)">
+                <div class="product-wishlist" id="addToWishlist">
                     <i class="bi bi-heart"></i> <span class="add-to-wishlist-text" id="addToWishlistText">ADD TO WISHLIST</span>
                 </div>
             </div>
@@ -98,6 +98,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="../assets/js/basket.js"></script>
+<script src="../assets/js/methods.js"></script>
 <script src="../assets/js/slider.js"></script>
 <script src="../assets/js/product.js"></script>
 </html>   

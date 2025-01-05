@@ -12,7 +12,7 @@ let generateCartItem = (product) => {
         </a>
         <div class="product-details">
             <div class="product-name" id="productName">
-                <h3>${name}</h3>
+                <h3 title="${name}">${name.length < 20 ? name : name.slice(0, 21) + '...'}</h3>
             </div>
             <div class="product-price" id="productPrice">
                 <p>${price}</p>
@@ -23,7 +23,7 @@ let generateCartItem = (product) => {
             </div>
         </div>
     `;
-
+    console.log('name lenght is:', name.length);
     const moveToWishlistButton = document.createElement('button');
     moveToWishlistButton.classList.add('move-to-wishlist-button');
     moveToWishlistButton.innerText = 'Move To Wishlist';
@@ -92,6 +92,7 @@ let removeFromCart = (productId) => {
     search = null;
     productId = null;
     generateCartItems();
+    calculateCartPrice();
 }
 
 let moveToWishlist = (productId) => {
@@ -105,6 +106,7 @@ let moveToWishlist = (productId) => {
         calculate(localCart, 'cartCount');
         calculate(localWishlist, 'wishlistCount');
         generateCartItems();
+        calculateCartPrice();
     }
 }
 
@@ -114,6 +116,22 @@ let calculate = (localStorageDatabase, selectionCountId) => {
     selectionCountElement.innerHTML = localStorageDatabase.length;
     generateCartItems();
 }
+
+
+let calculateCartPrice = async () => {
+    const data = await loadData('../../data/data.json');
+    // console.log(data.gameData);
+    const price = [];
+    document.querySelector('.full-price').innerHTML = '';
+    localCart.forEach(item => {
+        let search = data.gameData.find(game => item.id === game.id);
+        price.push(search.price.replace("₹", ""));
+    })
+    const totalPrice = price.reduce((a, b) => parseInt(a) +parseInt(b));
+    console.log(totalPrice);
+    document.querySelector('.full-price').innerHTML += `Full Price - ${totalPrice}`;
+}
+calculateCartPrice();
 
 calculate(localCart, 'cartCount');
 calculate(localWishlist, 'wishlistCount');
