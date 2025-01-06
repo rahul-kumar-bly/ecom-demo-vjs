@@ -84,19 +84,18 @@ a{
     background: #161618;
     border-radius: 4px;
     overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .prod-image img{
     width: 100%;
     border-radius: 2px 2px 0 0;
-    object-fit: cover;
 }
 
 .prod-image img:hover{
-    opacity: 0.8;
+    opacity: 0.9;
     scale: 105%;
-    transition: 300ms;
-    object-fit: cover;
+    transition: 350ms;
 }
 
 .prod-details{

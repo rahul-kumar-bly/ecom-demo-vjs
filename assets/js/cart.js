@@ -78,8 +78,6 @@ generateCartItems();
 
 
 let removeFromCart = (productId) => {
-    console.log('id is', productId);
-    console.log(typeof productId);
     let search = localCart.find(item => item.id === productId);
     if (search !== undefined) {
         localCart = localCart.filter(item => item.id !== productId);
@@ -89,8 +87,6 @@ let removeFromCart = (productId) => {
     }
     localStorage.setItem('cartData', JSON.stringify(localCart));
     calculate(localCart, 'cartCount');
-    search = null;
-    productId = null;
     generateCartItems();
     calculateCartPrice();
 }
@@ -109,14 +105,6 @@ let moveToWishlist = (productId) => {
         calculateCartPrice();
     }
 }
-
-let calculate = (localStorageDatabase, selectionCountId) => {
-    let selectionCountElement = document.getElementById(selectionCountId);
-    console.log(localStorageDatabase.length);
-    selectionCountElement.innerHTML = localStorageDatabase.length;
-    generateCartItems();
-}
-
 
 let calculateCartPrice = async () => {
     const data = await loadData('../../data/data.json');

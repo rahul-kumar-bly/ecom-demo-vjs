@@ -70,48 +70,5 @@ let generateShop = async () => {
 
 generateShop();
 
-let isInCartFunc = (prodCartDiv) => {
-    prodCartDiv.style.backgroundColor = '#5db585';
-    prodCartDiv.innerHTML = `<i class="bi bi-cart-fill"></i> ITEM IN CART`;
-    prodCartDiv.style.pointerEvents = 'none';
-}
-
-let isInWishlistFunc = (prodWishlistDiv) => {
-    prodWishlistDiv.innerHTML = `<i class="bi bi-heart-fill"></i>`
-    prodWishlistDiv.style.backgroundColor = '#c2181e';
-    prodWishlistDiv.style.pointerEvents = 'none';
-}
-
-
-
-let addToCart = (prodcutId) => {
-    prodcutId = String(prodcutId);
-    let search = localCart.find(item => item.id === prodcutId);
-    if (search === undefined) {
-        localCart.push({id:prodcutId});
-        localStorage.setItem('cartData', JSON.stringify(localCart));
-        calculate(localCart, 'cartCount');
-    } else {return;}
-}
-
-let addToWishlist = (prodcutId) => {
-    prodcutId = String(prodcutId);
-    let search = localWishlist.find(item => item.id === prodcutId);
-    if (search === undefined) {
-        localWishlist.push({id:prodcutId});
-        localStorage.setItem('wishlistData', JSON.stringify(localWishlist));
-        calculate(localWishlist, 'wishlistCount');
-    }
-    else {return;}
-}
-
-// selectionCountId - cartAmount
-
-let calculate = (localStorageDatabase, selectionCountId) => {
-    let selectionCountElement = document.getElementById(selectionCountId);
-    console.log(localStorageDatabase.length);
-    selectionCountElement.innerHTML = localStorageDatabase.length;
-}
-
 calculate(localCart, 'cartCount');
 calculate(localWishlist, 'wishlistCount');

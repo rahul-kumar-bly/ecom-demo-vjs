@@ -8,12 +8,12 @@ const sampleSlider = new Swiper('.sample-slider', {
         prevEl: ".swiper-button-prev",
     },
     scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
+        // el: '.swiper-scrollbar',
+        // draggable: true,
     },
     // if pagination(dots) is needed
     pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+        // el: '.swiper-pagination',
+        // clickable: true,
     },
 })

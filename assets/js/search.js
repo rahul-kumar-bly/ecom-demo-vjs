@@ -1,6 +1,3 @@
-let localWishlist = localStorage.getItem('wishlistData');
-let localCart = localStorage.getItem('cartData');
-
 
 const fetchDataForPubDev = async() => {
     const fetchData = await fetch('../../data/product.json');

@@ -26,6 +26,8 @@ let generateProductListing = async (product) => {
     productHtml.querySelector('#headingTitle h1').innerText = product.name;
     //     releaseDate
     productHtml.querySelector('#releaseDate').innerText = product.releaseDate;
+    //     releaseDate
+    productHtml.querySelector('#price').innerText = product.price;
 
     //  screenshot
     // const trailerDiv = document.getElementById('swiperSlide0');
@@ -42,7 +44,7 @@ let generateProductListing = async (product) => {
     //     mini image
     productHtml.querySelector('#miniImageContainer img').src = product.img;
     //     shortDesc
-    productHtml.querySelector('#shortDesc').innerText = product.shortDesc;
+    productHtml.querySelector('#shortDesc').innerText = product.shortDesc.replace('\n', '');
     //     pub-dev
     const pubInfo = productHtml.querySelector('#pub .pub-dev-title');
     product.pub.map(item => {
@@ -72,7 +74,7 @@ let generateProductListing = async (product) => {
 
     // long desc
     const longDescContainer = document.getElementById('longDesc');
-    productHtml.querySelector('#longDesc').innerText = product.longDesc.trim();
+    productHtml.querySelector('#longDesc').innerText = product.longDesc.trim().replace('\n\n', '');
 
 //     setup addToCart button
     const addToCartDiv = document.getElementById('addToCart');
@@ -98,85 +100,6 @@ let generateProductListing = async (product) => {
         console.log('itemIsInWishlist');
     }
 
-}
-
-let isInCartFunc = (prodCartDiv, textSpan) => {
-    prodCartDiv.style.backgroundColor = '#5db585';
-    document.querySelector(textSpan).innerText = "ITEM IN CART";
-    prodCartDiv.style.pointerEvents = 'none';
-}
-
-let isInWishlistFunc = (prodWishlistDiv, textSpan) => {
-    prodWishlistDiv.style.backgroundColor = '#c2181e';
-    document.querySelector(textSpan).innerText = "ITEM IN WISHLIST";
-    document.querySelector(textSpan).style.color = "#e3e3d0"
-    prodWishlistDiv.style.pointerEvents = 'none';
-
-}
-
-
-let addToCart = async (productId) => {
-    let search = localCart.find(item => item.id === productId);
-    if (search === undefined) {
-        localCart.push({id:productId});
-    }
-    else if (search) {
-        console.log('item already in cart');
-        return;
-    }
-    localStorage.setItem('cartData', JSON.stringify(localCart));
-    calculate(localCart, 'cartCount');
-}
-
-let removeFromCart = (productId) => {
-    let search = localCart.find(item => item.id === productId);
-    if (search !== undefined) {
-        localCart = localCart.filter(item => item.id !== productId);
-    }
-    else {
-        return;
-    }
-    localStorage.setItem('cartData', JSON.stringify(localCart));
-    calculate(localCart, 'cartCount');
-}
-
-
-let addToWishlist = async (productId) => {
-    let search = localWishlist.find(item => item.id === productId);
-    if (search === undefined) {
-        localWishlist.push({id:productId});
-    }
-    else if (search) {
-        console.log('item already in cart');
-        return;
-    }
-    localStorage.setItem('wishlistData', JSON.stringify(localWishlist));
-    calculate(localWishlist, 'wishlistCount');
-}
-
-let removeFromWishlist = (productId) => {
-    let search = localWishlist.find(item => item.id === productId);
-    if (search !== undefined) {
-        localWishlist = localWishlist.filter(item => item.id !== productId);
-    }
-    else {
-        return;
-    }
-    localStorage.setItem('wishlistData', JSON.stringify(localWishlist));
-    calculate(localWishlist, 'wishlistCount');
-}
-
-
-let calculate = (basketType, selector) => {
-    const lengthOfBasket = basketType.length;
-    const counter = document.getElementById(selector);
-    if (lengthOfBasket > 0){
-        counter.innerText = lengthOfBasket;
-        counter.style.visibility = 'visible';
-    }
-    if (lengthOfBasket === 0){
-        counter.style.visibility = 'hidden';
-    }
 }
 
 calculate(localCart, 'cartCount');

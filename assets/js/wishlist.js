@@ -107,14 +107,6 @@ let moveToCart = (productId) => {
     }
 }
 
-let calculate = (localStorageDatabase, selectionCountId) => {
-    let selectionCountElement = document.getElementById(selectionCountId);
-    console.log(localStorageDatabase.length);
-    selectionCountElement.innerHTML = localStorageDatabase.length;
-    generateWishlistItems();
-}
-
-
 let calculateCartPrice = async () => {
     if(localWishlist.length < 1) return;
     const data = await loadData('../../data/data.json');
