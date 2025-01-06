@@ -14,46 +14,7 @@ a{
     color: #E8E5E0;
 }
 
-.navbar{
-    background-color: #161618;
-    color: #E8E5E0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 50px;
-    margin-bottom: 30px;
-}
 
-.navbar a{
-    color: #E8E5E0;
-}
-
-.button-group{
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.cart, .wishlist{
-    position: relative;
-    font-size: 25px;
-    color: #161618;
-    padding: 7px;
-    background-color: #00E205;
-    border-radius: 4px;
-}
-
-
-.cartCount, .wishlistCount{
-    font-size: 16px;
-    position: absolute;
-    top: -7px;
-    right: -2px;
-    color: #E8E5E0;
-    background-color: #506e6a;
-    padding: 1px 5px;
-    border-radius: 3px;
-}
 /*=============================*/
 /* Main container */
 /*=============================*/
@@ -64,9 +25,6 @@ a{
 /*    gap: 25px;*/
 /*    align-items: center;*/
 /*}*/
-
-
-
 
 
 /*=============================*/

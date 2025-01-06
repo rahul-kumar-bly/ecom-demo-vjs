@@ -67,3 +67,14 @@ let calculate = (basketType, selector) => {
         counter.style.visibility = 'hidden';
     }
 }
+
+function handlSearch (event) {
+    event.preventDefault();
+    const searchValue = document.getElementById('search').value;
+    console.log(searchValue)
+    if (window.location.href.includes("index.html")) {
+        window.location.href = `pages/search.html?searchQuery=${searchValue.trim().split(" ").join("+")}`;
+    } else {
+        window.location.href = `search.html?searchQuery=${searchValue.trim().split(" ").join("+")}`;
+    }
+}

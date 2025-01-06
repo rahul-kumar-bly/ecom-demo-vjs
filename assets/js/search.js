@@ -1,29 +1,36 @@
 
-const fetchDataForPubDev = async() => {
+const fetchDataFromJson = async() => {
     const fetchData = await fetch('../../data/product.json');
     const res = await fetchData.json();
     const dataMap = res.gameData
     let fetchedData = undefined;
     const urlParams = new URLSearchParams(window.location.search);
+    console.log('i am ata here');
     if (urlParams.has('pubId')) {
         const pubId = urlParams.get('pubId');
         fetchedData = dataMap.filter(item => item.pub.find(ifind => ifind.trim() === pubId.trim())) || [];
     } else if (urlParams.has('devId')) {
         const devId = urlParams.get('devId');
         fetchedData = dataMap.filter(item => item.dev.find(ifind => ifind.trim() === devId.trim())) || [];
-    } else {
+    } else if (urlParams.has('searchQuery')) {
+        const searchQuery = urlParams.get('searchQuery');
+        console.log('hello there')
+        console.log('searchquery is', searchQuery);
+        const regex = new RegExp(searchQuery, "i");
+        fetchedData = dataMap.filter(item => Object.values(item).some(value=> regex.test(String(value))));
+        console.log(fetchedData);
+    }
+    else {
         console.log("something is wrong");
     }
 
     const shop = document.getElementById('shop');
-    fetchedData.forEach((item) =>{
-            // console.log('name is', item.name);
-            shop.append(generateShopItem(item));
-        })
+    fetchedData.forEach((item) => {
+        // console.log('name is', item.name);
+        shop.append(generateShopItem(item));
+    })
 }
-
-fetchDataForPubDev();
-
+fetchDataFromJson();
 
 
 let generateShopItem = (product) => {
