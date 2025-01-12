@@ -12,16 +12,20 @@ let loadData = async (data) => {
 
 // addToCart and addToWishlist methods are for index and product pages only
 let addToCart = async (productId) => {
+    if (localCart.length === 10){
+        alert('Buy some items before adding more');
+        return;
+    }
     let search = localCart.find(item => item.id === productId);
     if (search === undefined) {
         localCart.push({id:productId});
+        localStorage.setItem('cartData', JSON.stringify(localCart));
+        calculate(localCart, 'cartCount');
     }
     else {
         console.log('item already in cart');
         return;
     }
-    localStorage.setItem('cartData', JSON.stringify(localCart));
-    calculate(localCart, 'cartCount');
 }
 
 
@@ -68,6 +72,8 @@ let calculate = (basketType, selector) => {
     }
 }
 
+// for all pages
+
 function handlSearch (event) {
     event.preventDefault();
     const searchValue = document.getElementById('search').value;
@@ -77,4 +83,31 @@ function handlSearch (event) {
     } else {
         window.location.href = `search.html?searchQuery=${searchValue.trim().split(" ").join("+")}`;
     }
+}
+
+function showLimitWarning(type){
+    const warningDiv = document.querySelector('.warning');
+    const warningDivP = document.querySelector('.warning p');
+    let interval = 1000;
+    let warningInterval = setInterval(showWarningMessage, 1000)
+    function showWarningMessage(){
+        if (interval === 1009){
+            warningDiv.style.display = 'none';
+            clearInterval(warningInterval);
+            warningDivP.innerHTML = ``;
+            return;
+        }
+        if (type==='cart'){
+            warningDivP.innerHTML = `<i class="bi bi-exclamation-diamond-fill"></i>
+            Cart Maximum Reached! Buy or remove some items before adding more to cart.`
+        } else if (type==='wishlist'){
+            warningDivP.innerHTML = `<i class="bi bi-exclamation-diamond-fill"></i>
+            Wishlist Maximum Reached! Move items to cart before adding more to wishlist.`
+        }
+        console.log(interval);
+        window.scroll(0,0);
+        warningDiv.style.display = 'flex';
+        interval++;
+        }
+
 }

@@ -1,6 +1,6 @@
 
 const fetchDataFromJson = async() => {
-    const fetchData = await fetch('../../data/product.json');
+    const fetchData = await fetch('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/product.json');
     const res = await fetchData.json();
     const dataMap = res.gameData
     let fetchedData = undefined;

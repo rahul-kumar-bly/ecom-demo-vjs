@@ -11,7 +11,7 @@ let generateShopItem = (product) => {
         </div>
         <div class="prod-info">
             <div class="prod-details">
-                <a href="#" class="item-title">${name}</a>
+                <a class="item-title">${name}</a>
                 <div class="item-price">${price}</div>
             </div>
             <div class="prod-action">  
@@ -32,8 +32,12 @@ let generateShopItem = (product) => {
     }
 
     prodCartAnchor.addEventListener('click', () => {
-        addToCart(id);
-        isInCartFunc(prodCartDiv);
+        if(localCart.length < 10){
+            addToCart(id);
+            isInCartFunc(prodCartDiv);
+        } else {
+            showLimitWarning('cart');
+        }
     });
 
     const prodWishlistAnchor = document.createElement('a');
@@ -50,8 +54,13 @@ let generateShopItem = (product) => {
     }
 
     prodWishlistAnchor.addEventListener('click', () => {
-        addToWishlist(id);
-        isInWishlistFunc(prodWishlistDiv);
+        if(localWishlist.length < 10){
+            addToWishlist(id);
+            isInWishlistFunc(prodWishlistDiv);
+        } else {
+            showLimitWarning('wishlist');
+        }
+
     });
 
 
@@ -60,7 +69,7 @@ let generateShopItem = (product) => {
 
 
 let generateShop = async () => {
-    const gameDatabase = await loadData('../../data/data.json')
+    const gameDatabase = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json')
     const shop = document.getElementById('shop')
     gameDatabase.gameData.map((item) =>{
         console.log('name is', item.name);

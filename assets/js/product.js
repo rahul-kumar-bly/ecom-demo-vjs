@@ -2,7 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("id");
 
 let loadProduct = async (productId) => {
-    const data = await loadData('../../data/product.json');
+    const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/product.json');
     const product = data.gameData.find(item => item.id === productID);
     console.log(product);
     await generateProductListing(product);
