@@ -1,7 +1,17 @@
 .main-container{
-    display: grid;
-    grid-template-columns:70% 20%;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+}
+.container h1{
+    font-family: "Inter", sans-serif;
 }
 
 .products{
@@ -9,7 +19,7 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    /*margin: auto;*/
+    margin: auto;
     color:#E8E5E0;
 }
 
@@ -22,6 +32,7 @@
 .product:hover{
     opacity: 0.9;
 }
+
 .product-image{
     width:120px;
     height:60px;
@@ -41,6 +52,22 @@
     gap:20px
 }
 
+.product-name-price{
+    display: flex;
+}
+
+@media (max-width:500px){
+    .product-details{
+        flex-direction: column;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        gap: 15px;
+    }
+    .product-name-price{
+        flex-direction: column;
+    }
+}
+
 .product-name{
     width:220px;
     font-size:large;
@@ -49,6 +76,7 @@
     width:50px;
     font-size:large;
 }
+
 .cart-operations{
     display: flex;
     flex-direction: row;
@@ -73,38 +101,6 @@
     background-color: #e66051;
     width:130px;
     text-align: center;
-}
-
-/*sidebar section css*/
-.sidebar{
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    background: #161618;
-    padding: 10px 10px;
-}
-.sidebar-header{
-    padding: 10px 10px;
-    font-family: "Inter", sans-serif;
-    background: #494a4f;
-}
-
-.price-discount-section{
-    padding: 10px 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: large;
-    font-family: "Noto Serif", serif;
-    margin-top:10px;
-}
-.payment-button-section{
-    padding: 0px 10px;
-}
-.payment-button{
-    padding: 10px 10px;
-    background-color: #00e205;
-    font-weight: bold;
 }
 
 .no-item-found{

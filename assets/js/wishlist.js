@@ -11,12 +11,15 @@ let generateWishlistItem = (product) => {
             </div>                
         </a>
         <div class="product-details">
+        <div class="product-name-price">
             <div class="product-name" id="productName">
                 <h3 title="${name}">${name.length < 20 ? name : name.slice(0, 21) + '...'}</h3>
             </div>
             <div class="product-price" id="productPrice">
                 <p>${price}</p>
-            </div>
+            </div>        
+        </div>
+
             <div class="wishlist-operations" id="wishlistOperations-${id}">
                 <div class="move-to-cart"></div>
                 <div class="remove-from-wishlist"></div>
@@ -89,7 +92,7 @@ let removeFromWishlist = (productId) => {
     search = null;
     productId = null;
     generateWishlistItems();
-    calculateCartPrice();
+    calculateWishlistPrice();
 }
 
 let moveToCart = (productId) => {
@@ -103,11 +106,11 @@ let moveToCart = (productId) => {
         calculate(localCart, 'cartCount');
         calculate(localWishlist, 'wishlistCount');
         generateWishlistItems();
-        calculateCartPrice();
+        calculateWishlistPrice();
     }
 }
 
-let calculateCartPrice = async () => {
+let calculateWishlistPrice = async () => {
     if(localWishlist.length < 1) return;
     const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json');
     const price = [];
@@ -120,7 +123,7 @@ let calculateCartPrice = async () => {
     console.log(totalPrice);
     document.querySelector('.full-price').innerHTML += `${totalPrice}`;
 }
-calculateCartPrice();
+calculateWishlistPrice();
 
 calculate(localCart, 'cartCount');
 calculate(localWishlist, 'wishlistCount');

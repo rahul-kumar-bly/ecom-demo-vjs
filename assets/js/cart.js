@@ -11,12 +11,15 @@ let generateCartItem = (product) => {
             </div>                
         </a>
         <div class="product-details">
-            <div class="product-name" id="productName">
-                <h3 title="${name}">${name.length < 20 ? name : name.slice(0, 21) + '...'}</h3>
+            <div class="product-name-price">
+                <div class="product-name" id="productName">
+                    <h3 title="${name}">${name.length < 20 ? name : name.slice(0, 21) + '...'}</h3>
+                </div>
+                <div class="product-price" id="productPrice">
+                    <p>${price}</p>
+                </div>
             </div>
-            <div class="product-price" id="productPrice">
-                <p>${price}</p>
-            </div>
+
             <div class="cart-operations" id="cartOperations-${id}">
                 <div class="move-to-wishlist"></div>
                 <div class="remove-from-cart"></div>
@@ -58,8 +61,6 @@ let generateCartItems = async () => {
     const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json');
     const shoppingCart = document.getElementById('products');
     if (localCart.length > 0){
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.visibility = 'visible';
         shoppingCart.innerHTML = '';
         localCart.forEach(item => {
             let search = data.gameData.find((dataItem)=> dataItem.id === item.id) || {};
@@ -67,10 +68,10 @@ let generateCartItems = async () => {
         })
     } else {
         shoppingCart.innerHTML = '';
+        const container = document.querySelector('.container');
         const noItem = document.querySelector('.no-item-found');
-        const sidebar = document.querySelector('.sidebar');
+        container.style.visibility = 'hidden';
         noItem.style.visibility = 'visible';
-        sidebar.style.visibility = 'hidden';
     }
 }
 

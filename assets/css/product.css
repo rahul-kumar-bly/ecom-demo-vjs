@@ -62,9 +62,11 @@
 }
 
 @media (max-width:1000px){
+    .top-container-bg{
+        border-radius: 0px;
+    }
     .top-container{
         flex-direction: column;
-
     }
     .top-left-container{
         width: 420px;
@@ -97,6 +99,7 @@
     width: 99%;
     text-align: justify;
 }
+
 
 .pub-dev{
     display: flex;
@@ -173,4 +176,10 @@
     font-weight: 400;
     font-style: normal;
     font-family: "Inter", sans-serif
+}
+
+@media (max-width:500px){
+    .middle-container{
+        margin:20px 40px;
+    }
 }

@@ -32,6 +32,7 @@
 .product:hover{
     opacity: 0.9;
 }
+
 .product-image{
     width:120px;
     height:60px;
@@ -51,6 +52,22 @@
     gap:20px
 }
 
+.product-name-price{
+    display: flex;
+}
+
+@media (max-width:500px){
+    .product-details{
+        flex-direction: column;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        gap: 15px;
+    }
+    .product-name-price{
+        flex-direction: column;
+    }
+}
+
 .product-name{
     width:220px;
     font-size:large;
@@ -59,6 +76,7 @@
     width:50px;
     font-size:large;
 }
+
 .wishlist-operations{
     display: flex;
     flex-direction: row;

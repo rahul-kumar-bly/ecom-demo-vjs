@@ -1,6 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("id");
 
+
+
+
 let loadProduct = async (productId) => {
     const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/product.json');
     const product = data.gameData.find(item => item.id === productID);
@@ -19,6 +22,45 @@ let generateProductListing = async (product) => {
 `;
     container.style.backgroundSize = 'cover';
     container.style.backgroundPosition = 'center';
+
+    // adding head section meta-data
+    const head = document.querySelector('head');
+    // adding favicon
+    const favicon = document.createElement('link');
+    favicon.setAttribute('rel', 'icon' );
+    favicon.setAttribute('type', 'image/x-icon' );
+    favicon.setAttribute('href', `${product.icon}`);
+    head.appendChild(favicon);
+    // adding title
+    document.title = `Buy ${product.name} Game Key in India`;
+    // adding other meta data
+    const metaTitle = document.createElement("meta");
+    metaTitle.setAttribute("name", "title");
+    metaTitle.setAttribute(
+        "content",
+        `Buy ${product.name} at best price in India Online.`
+    );
+    const metaDesc = document.createElement("meta");
+    metaDesc.setAttribute("name", "description");
+    metaDesc.setAttribute("content", product.shortDesc);
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.setAttribute("name", "keywords");
+    metaKeywords.setAttribute(
+        "content",
+        `${product.name},${product.dev},${product.pub}}`
+    );
+
+    document.head.appendChild(metaTitle);
+    document.head.appendChild(metaDesc);
+    document.head.appendChild(metaKeywords);
+
+
+
+
+
+
+
+
     // product section data
     const productHtml = document.getElementById('product');
     // icon, name
