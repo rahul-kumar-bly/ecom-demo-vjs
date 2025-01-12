@@ -55,7 +55,7 @@ let generateWishlistItem = (product) => {
 }
 
 let generateWishlistItems = async () => {
-    const data = await loadData('../../data/data.json');
+    const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json');
     const shoppingWishlist = document.getElementById('products');
     if (localWishlist.length > 0){
         shoppingWishlist.innerHTML = '';

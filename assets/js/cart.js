@@ -55,7 +55,7 @@ let generateCartItem = (product) => {
 }
 
 let generateCartItems = async () => {
-    const data = await loadData('../../data/data.json');
+    const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json');
     const shoppingCart = document.getElementById('products');
     if (localCart.length > 0){
         const sidebar = document.querySelector('.sidebar');
