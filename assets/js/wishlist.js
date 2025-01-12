@@ -109,7 +109,7 @@ let moveToCart = (productId) => {
 
 let calculateCartPrice = async () => {
     if(localWishlist.length < 1) return;
-    const data = await loadData('../../data/data.json');
+    const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json');
     const price = [];
     document.querySelector('.full-price').innerHTML = '';
     localWishlist.forEach(item => {

@@ -107,7 +107,7 @@ let moveToWishlist = (productId) => {
 }
 
 let calculateCartPrice = async () => {
-    const data = await loadData('../../data/data.json');
+    const data = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/product.json');
     // console.log(data.gameData);
     const price = [];
     document.querySelector('.full-price').innerHTML = '';
