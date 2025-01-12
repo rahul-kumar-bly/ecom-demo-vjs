@@ -94,7 +94,6 @@
 .short-desc{
     font-size: 15px;
     flex-wrap: wrap;
-    /*width: 80%;*/
     width: 99%;
     text-align: justify;
 }
