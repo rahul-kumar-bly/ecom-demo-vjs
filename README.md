@@ -7,7 +7,7 @@ Features:
 - Dynamically loaded product pages and search items.
 - SwiperJs image slider.
 - Responsive layout, made for both mobile and desktop.
-- CSS theme inspired from greenmangaming.
+- Theme colors inspired from greenmangaming.
 
 Screenshots:
 
