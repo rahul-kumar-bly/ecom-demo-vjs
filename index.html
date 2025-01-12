@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <base href="/ecom-demo-vjs/">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -30,6 +31,7 @@
         </a>
     </div>
 </div>
+<div class="warning"><p></p></div>
 
 <div class="search-outer-container">
     <div class="search-container">
@@ -38,6 +40,36 @@
             <button type="submit" id="searchButton"><i class="bi bi-search"></i>
             </button>
         </form>
+    </div>
+</div>
+
+<div class="sort-outer-container">
+    <div class="sort-container">
+            <form>
+                <div class="sortBy-price">
+                    <label for="sortByPrice">Sort By Price</label>
+                    <select name="sortByPrice" id="sortByPrice">
+                        <option value="lowToHigh">Low to High</option>
+                        <option value="highToLow">High to Low</option>
+                    </select>
+                </div>
+                <div class="sortBy-name">
+                    <label for="sortByName">Sort By Name</label>
+                    <select name="sortByName" id="sortByName">
+                        <option value="aToZ">A to Z</option>
+                        <option value="zToA">Z to A</option>
+                    </select>
+                </div>
+                <div class="sortBy-releaseDate">
+                    <label for="sortByReleaseDate">Sort By Release Date</label>
+                    <select name="sortByreleaseDate" id="sortByreleaseDate">
+                        <option value="newset">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+                <button><i class="bi bi-filter-circle-fill"></i>
+                     Confirm Choice</button>
+            </form>
     </div>
 </div>
 
@@ -51,7 +83,7 @@
 
 
 </body>
-<script src="/assets/js/methods.js"></script>
-<script src="/assets/js/basket.js"></script>
-<script src="/assets/js/index.js"></script>
+<script src="assets/js/methods.js"></script>
+<script src="assets/js/basket.js"></script>
+<script src="assets/js/index.js"></script>
 </html>
