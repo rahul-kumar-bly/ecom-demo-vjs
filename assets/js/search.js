@@ -1,6 +1,6 @@
 
 const fetchDataFromJson = async() => {
-    const fetchData = await fetch('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/product.json');
+    const fetchData = await fetch('https://rahul7kumar7.github.io/ecom-demo-vjs/data/product.json');
     const res = await fetchData.json();
     const dataMap = res.gameData
     let fetchedData = undefined;
@@ -52,44 +52,6 @@ let generateShopItem = (product) => {
             <div class="prod-action">  
             </div>
     `;
-
-    // const prodCartAnchor = document.createElement('a');
-    // prodCartAnchor.id = 'addToCart';
-    // const prodCartDiv = document.createElement('div');
-    // prodCartDiv.classList.add('prod-cart');
-    // prodCartDiv.innerHTML = `<i class="bi bi-cart-fill"></i> ADD TO CART`;
-    // productItem.querySelector('.prod-action').appendChild(prodCartAnchor);
-    // prodCartAnchor.appendChild(prodCartDiv);
-
-    // const isInCart = localCart.some(item => item.id === id);
-    // if (isInCart){
-    //     isInCartFunc(prodCartDiv)
-    // }
-    //
-    // prodCartAnchor.addEventListener('click', () => {
-    //     addToCart(id);
-    //     isInCartFunc(prodCartDiv);
-    // });
-
-    // const prodWishlistAnchor = document.createElement('a');
-    // prodWishlistAnchor.id = 'addToWishlist';
-    // const prodWishlistDiv = document.createElement('div');
-    // prodWishlistDiv.classList.add('prod-wishlist');
-    // prodWishlistDiv.innerHTML = `<i class="bi bi-heart"></i>`;
-    // productItem.querySelector('.prod-action').appendChild(prodWishlistAnchor);
-    // prodWishlistAnchor.appendChild(prodWishlistDiv);
-    // const isInWishlist = localWishlist.some(item => item.id === id);
-
-    // if (isInWishlist) {
-    //     isInWishlistFunc(prodWishlistDiv)
-    // }
-    //
-    // prodWishlistAnchor.addEventListener('click', () => {
-    //     addToWishlist(id);
-    //     isInWishlistFunc(prodWishlistDiv);
-    // });
-
-
     return productItem;
 }
 
