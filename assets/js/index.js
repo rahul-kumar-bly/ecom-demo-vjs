@@ -69,7 +69,7 @@ let generateShopItem = (product) => {
 
 
 let generateShop = async () => {
-    const gameDatabase = await loadData('https://rahul-kumar-bly.github.io/ecom-demo-vjs/data/data.json')
+    const gameDatabase = await loadData('https://rahul7kumar7.github.io/ecom-demo-vjs/data/data.json')
     const shop = document.getElementById('shop')
     gameDatabase.gameData.map((item) =>{
         console.log('name is', item.name);
