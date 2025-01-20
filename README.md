@@ -18,4 +18,4 @@ Screenshots:
 ![image](https://github.com/user-attachments/assets/b6531994-1957-41b2-807c-13242fcbbe5c)
 
 Have a look:
-https://rahul-kumar-bly.github.io/ecom-demo-vjs
+[https://rahul-kumar-bly.github.io/ecom-demo-vjs](https://rahul7kumar7.github.io/ecom-demo-vjs/)
